@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 25
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.transporte_api"
         minSdk 25
-        targetSdk 25
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 

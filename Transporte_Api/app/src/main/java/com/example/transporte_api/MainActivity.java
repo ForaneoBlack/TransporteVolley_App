@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView=  findViewById(R.id.ListViewCarros);
+        listView=  findViewById(R.id.LVCarros);
         arrayAdapter=new ArrayAdapter(this, android.R.layout.simple_list_item_1,datos);
         listView.setAdapter(arrayAdapter);
         getDatos();
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Volley.newRequestQueue(this).add(jsonArrayRequest);
     }
+
     private void pasarJson( JSONArray array){
         for(int i=0;i<array.length();i++){
             Publicacion post= new Publicacion();
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 json=array.getJSONObject(i);
-                post.setNombre(json.getString("nombre"));
+                post.setNombre(json.getString("nome"));
                 post.setCodigo(json.getInt("codigo"));
                 datos.add(post.getNombre());
             } catch (JSONException e) {
